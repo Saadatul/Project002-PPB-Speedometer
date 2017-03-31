@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@android:color/black"
+    android:background="@android:color/holo_red_light"
     android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/buttoninfo"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:src="@drawable/info" />
+
+    <ImageButton
+        android:id="@+id/buttonabout"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:src="@drawable/about" />
 
     <ImageView
         android:id="@+id/image"
@@ -14,11 +33,19 @@
         android:src="@mipmap/ic_launcher"
         android:visibility="gone" />
 
+    <ImageView
+        android:id="@+id/speed"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/speed" />
+
     <TextView
         android:id="@+id/distancetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="325dp"
         android:gravity="center"
         android:singleLine="true"
         android:text="Total Distance:"
@@ -30,7 +57,7 @@
         android:id="@+id/speedtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="365dp"
         android:gravity="center"
         android:singleLine="true"
         android:text="Instantaneous Speed:"
@@ -41,7 +68,7 @@
         android:id="@+id/timetext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="400dp"
         android:gravity="center"
         android:singleLine="true"
         android:text="Total Time:"
@@ -60,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            android:background="@android:color/white"
+            android:background="@android:color/holo_blue_light"
             android:paddingBottom="0dp"
             android:text="Start Calculating" />
 

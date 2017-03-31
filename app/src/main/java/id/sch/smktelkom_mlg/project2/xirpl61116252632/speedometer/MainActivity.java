@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
     static boolean status;
     static TextView dist, time, speed;
     static long startTime, endTime;
@@ -26,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     LocationService myService;
     LocationManager locationManager;
     Button start, pause, stop;
-    ImageView image;
+    ImageView image, iSpeed;
+
     private ServiceConnection sc = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -80,10 +80,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (status == false)
-            super.onBackPressed();
-        else
-            moveTaskToBack(true);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //pesan keluar
+        builder.setMessage("Are you sure want to exit ?")
+                .setCancelable(false)
+                //Button Keluar
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        moveTaskToBack(true);
+                        System.exit(0);
+                    }
+                })
+                //Button Batal
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
 
@@ -91,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         dist = (TextView) findViewById(R.id.distancetext);
         time = (TextView) findViewById(R.id.timetext);
@@ -102,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         stop = (Button) findViewById(R.id.stop);
 
         image = (ImageView) findViewById(R.id.image);
+        iSpeed = (ImageView) findViewById(R.id.speed);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,8 +186,21 @@ public class MainActivity extends AppCompatActivity {
                 p = 0;
             }
         });
-    }
 
+        findViewById(R.id.buttoninfo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, InfoActivity.class));
+            }
+        });
+
+        findViewById(R.id.buttonabout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+            }
+        });
+    }
 
     //This method leads you to the alert dialog box.
     void checkGps() {
