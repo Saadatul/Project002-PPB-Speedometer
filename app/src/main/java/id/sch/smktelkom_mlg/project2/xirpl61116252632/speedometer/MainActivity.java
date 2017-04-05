@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
             }
         });
+
     }
 
     //This method leads you to the alert dialog box.
@@ -235,5 +236,4 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
     }
-
 }

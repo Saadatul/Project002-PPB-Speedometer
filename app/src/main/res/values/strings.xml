@@ -1,6 +1,20 @@
 <resources>
-    <string name="app_name">Speedometer</string>
+    <string name="app_name">Speed-Bo</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="slide_1_title">Welcome to Speed-Bo</string>
+    <string name="slide_1_desc">Speed-Bo helps you to measure distance, speed, and time only one click.</string>
+
+    <string name="slide_2_title">Measure distance</string>
+    <string name="slide_2_desc">You can measure distance with one click!</string>
+
+    <string name="slide_3_title">Measure speed</string>
+    <string name="slide_3_desc">You can measure speed with one click!</string>
+
+    <string name="slide_4_title">Measure time</string>
+    <string name="slide_4_desc">You can measure time with one click!</string>
+
 </resources>
