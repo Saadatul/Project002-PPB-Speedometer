@@ -13,7 +13,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "id.sch.smktelkom_mlg.project2.xirpl61116252632.speedometer"
+        applicationId "xirpl61116252632.project2.smktelkom_mlg.sch.id"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
